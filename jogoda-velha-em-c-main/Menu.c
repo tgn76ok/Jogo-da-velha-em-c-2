@@ -2,9 +2,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "C:\Users\Thiago Germano\Treino\C\Jogodavelha2-0\jogoda-velha-em-c-main\Funcoes\JogoSolo.h"
-#include "C:\Users\Thiago Germano\Treino\C\Jogodavelha2-0\jogoda-velha-em-c-main\Funcoes\JogoMult.h"
-#include "C:\Users\Thiago Germano\Treino\C\Jogodavelha2-0\jogoda-velha-em-c-main\menu\creditos.h"
+#include "Funcoes\JogoSolo.h"
+#include "Funcoes\JogoMult.h"
+#include "menu\creditos.h"
 
 
 int main(){
