@@ -15,7 +15,7 @@ int jogomult(){
 	int contX =0,contO =0;
 	int linha1,coluna1;
 	int linha2,coluna2;
-        int next=0;
+    int next=0;
 	int turno=0;
 	int cont=0,numDeVitorias=0;
 	int empate=0;
@@ -125,7 +125,7 @@ int jogomult(){
                                 if (lista[linha][coluna]!=' '){
                                         cont++;
                                 }
-				if (cont==9){
+                                if (cont==9){
                                     for(int linhaR=0; linhaR<3;linhaR++){
                                         for(int colunaR=0; colunaR<3;colunaR++){
                                             lista[linhaR][colunaR] = ' ';
