@@ -15,7 +15,7 @@ int jogomult(){
 	int contX =0,contO =0;
 	int linha1,coluna1;
 	int linha2,coluna2;
-    int next=0;
+        int next=0;
 	int turno=0;
 	int cont=0,numDeVitorias=0;
 	int empate=0;
