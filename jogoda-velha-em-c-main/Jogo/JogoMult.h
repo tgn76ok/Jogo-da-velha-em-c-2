@@ -49,7 +49,7 @@ int jogomult(){
         fflush(stdin);
 
 		while(1){
-                    /*correçao do um bug--
+                    /*correÃ§ao do um bug--
                     quando um jogo acaba, o jogador 2 inica com a variavel opcao vazia-- */
                     for(int g=0; g<=3;g++){
                         for(int d=0; d<=3;d++){
@@ -120,13 +120,14 @@ int jogomult(){
 		        }else{
 
                         //empate
-                        for(int linha=0; linha<=3;linha++){
-                            for(int coluna =0; coluna<=3;coluna++){
+                        for(int linha=0; linha<3;linha++){
+                            for(int coluna =0; coluna<3;coluna++){
                                 if (lista[linha][coluna]!=' '){
                                         cont++;
-                                }else if (cont==9){
-                                    for(int linhaR=0; linhaR<=3;linhaR++){
-                                        for(int colunaR=0; colunaR<=3;colunaR++){
+                                }
+				if (cont==9){
+                                    for(int linhaR=0; linhaR<3;linhaR++){
+                                        for(int colunaR=0; colunaR<3;colunaR++){
                                             lista[linhaR][colunaR] = ' ';
                                         }
                                     }
