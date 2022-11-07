@@ -18,7 +18,7 @@ int jogosolo(){
 
 	int turno;
 	char lista[3][3] = {
-        {' ', ' ', ' '},
+        {' ', ' ',  ' '},
         {' ', ' ', ' '},
         {' ', ' ', ' '},};
 
@@ -119,7 +119,6 @@ int jogosolo(){
 
                             contO +=1;
                     }else{
-                        
                         //empate
                         for(int linha=0; linha<3;linha++){
                             for(int coluna =0; coluna<3;coluna++){
@@ -140,7 +139,7 @@ int jogosolo(){
                     }
 
 
-                    if (contX > next || contO >next){
+                    if (contX > next || contO >next || empate == 1){
                         printf("\nQuer continuar?[s/n] ");
                         scanf("%s",&continuar);
 
@@ -151,7 +150,7 @@ int jogosolo(){
                         }
 
                         next++;
-
+                        empate =0
                         if(continuar == 'n'){
                             if(opcao == 'x'){
                                 vezesWins = contX;
