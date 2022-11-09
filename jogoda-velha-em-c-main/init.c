@@ -5,6 +5,7 @@
 #include "Jogo/JogoSolo.h"
 #include "jogo/JogoMult.h"
 #include "logs/creditos.h"
+#include "logs/OrdernarORank.c"
 
 
 int main(){
@@ -41,8 +42,9 @@ int main(){
                 break;
             case 3 :
                 system("cls");
-                creditos();
+                PrintRank();
                 system("pause");
+                break;
             case 4 :
                 para = false;
                 break;
