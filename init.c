@@ -6,7 +6,7 @@
 #include "jogo/JogoMult.h"
 #include "logs/creditos.h"
 #include "logs/OrdernarORank.c"
-
+// Essa parte do projeto esta responsavel em rediricionar o(os) usuarios para o que eles dejesan
 
 int main(){
     bool para = true;

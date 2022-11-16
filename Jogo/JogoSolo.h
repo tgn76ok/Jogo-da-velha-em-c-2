@@ -1,10 +1,33 @@
+
 #include "../Funcoes/Mensagens.h"
+
+
 #include "../logs/rank.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+char verificar(char tabela[3][3]){
+        for(int i=0; i < 3; i++){
+            if((tabela[i][0] == tabela[i][1]) && (tabela[i][0] == tabela[i][2])){
+                return tabela[i][0];
+            }
+        }
 
+        for(int i=0; i < 3; i++){
+            if((tabela[0][i] == tabela[1][i]) && (tabela[0][i] == tabela[2][i])){
+                return tabela[0][i];
+            }
+        }
+        if ((tabela[0][0] == tabela[1][1])&&(tabela[0][0] == tabela[2][2])){
+                return tabela[0][0];
+
+        }else if ((tabela[2][0] == tabela[1][1])&& (tabela[2][0] == tabela[0][2])){
+                return tabela[2][0];
+            }
+    return ' ';
+
+}
 int jogosolo(){
 	char continuar;
 	char opcao, opcaopc;
@@ -51,73 +74,12 @@ int jogosolo(){
 
             while(1){
                 /*quem ganha e quantas vezes ganharam*/
-                    if ((lista[0][0] == lista[0][1])&& (lista[0][0]== lista[0][2])&& (lista[0][0]== 'x')){
-                            contX +=1;
+                    if (verificar(lista)=='x'){
                             MensagemWins('x');
-                    }else if ((lista[0][0] == lista[0][1])&& (lista[0][0]== lista[0][2])&& (lista[0][0]== 'o')){
+                            contX++;
+                    }else if(verificar(lista)=='o'){
                             MensagemWins('o');
-                            contO +=1;
-
-                    }else if ((lista[1][0] == lista[1][1]) && (lista[1][0]== lista[1][2]) && (lista[1][0] == 'x')){
-                        MensagemWins('x');
-
-                            contX +=1;
-
-                    }else if ((lista[1][0] == lista[1][1]) && (lista[1][0]== lista[1][2]) && (lista[1][0] == 'o')){
-                            MensagemWins('o');
-
                             contO++;
-
-                    }else if ((lista[2][0] == lista[2][1]) && (lista[2][0] == lista[2][2]) && (lista[2][0]== 'x')){
-                            MensagemWins('x');
-
-                            contX +=1;
-                    }else if((lista[2][0] == lista[2][1]) && (lista[2][0] == lista[2][2]) && (lista[2][0] == 'o')){
-                            MensagemWins('o');
-
-                            contO +=1;
-
-                    }else if ((lista[0][0] == lista[1][0])&&(lista[0][0] == lista[2][0])&&(lista[0][0] == 'x')){
-                            MensagemWins('x');
-
-                            contX +=1;
-                    }else if ((lista[0][0] == lista[1][0])&&(lista[0][0] == lista[2][0])&&(lista[0][0] == 'o')){
-                            MensagemWins('o');
-
-                            contO +=1;
-                    }else if ((lista[0][1] == lista[1][1])&&(lista[0][1] == lista[2][1]) && (lista[0][1] == 'x')){
-                            MensagemWins('x');
-
-                            contX +=1;
-                    }else if ((lista[0][1] == lista[1][1])&&(lista[0][1] == lista[2][1]) && (lista[0][1] == 'o')){
-                            MensagemWins('o');
-
-                            contO +=1;
-
-                    }else if ((lista[0][2] == lista[1][2])&&(lista[0][2] == lista[2][2])&& (lista[0][2] == 'x')){
-                            MensagemWins('x');
-
-                            contX +=1;
-                    }else if ((lista[0][2] == lista[1][2])&&(lista[0][2] == lista[2][2])&& (lista[0][2] == 'o')){
-                            MensagemWins('o');
-
-                            contO +=1;
-                    }else if ((lista[0][0] == lista[1][1])&&(lista[0][0] == lista[2][2]) && (lista[0][0] == 'x')){
-                            MensagemWins('x');
-
-                            contX +=1;
-                    }else if ((lista[0][0] == lista[1][1])&&(lista[0][0] == lista[2][2]) && (lista[0][0] == 'o')){
-                            MensagemWins('o');
-
-                            contO +=1;
-                    }else if ((lista[2][0] == lista[1][1])&& (lista[2][0] == lista[0][2])&&(lista[2][0] == 'x')){
-                            MensagemWins('x');
-
-                            contX +=1;
-                    }else if ((lista[2][0] == lista[1][1])&& (lista[2][0] == lista[0][2])&&(lista[2][0] == 'o')){
-                            MensagemWins('o');
-
-                            contO +=1;
                     }else{
                         //empate
                         for(int linha=0; linha<3;linha++){
@@ -197,7 +159,6 @@ int jogosolo(){
 
                         }else{
                             MensagemErrosValorMAiorQue3EMenoQue1();
-
                         }
 
 
