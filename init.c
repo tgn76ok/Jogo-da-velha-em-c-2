@@ -5,7 +5,7 @@
 #include "Jogo/JogoSolo.h"
 #include "jogo/JogoMult.h"
 #include "logs/creditos.h"
-#include "logs/OrdernarORank.c"
+#include "logs/OrdernarORank.h"
 // Essa parte do projeto esta responsavel em rediricionar o(os) usuarios para o que eles desejam
 
 int main(){
@@ -27,10 +27,12 @@ int main(){
 
          switch(ops){
             case 0 :
+                PrintRank();
                 system("cls");
                 jogosolo();
                 break;
             case 1 :
+                PrintRank();
                 system("cls");
                 jogomult();
                 break;
