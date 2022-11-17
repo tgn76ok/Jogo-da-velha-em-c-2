@@ -1,6 +1,7 @@
 
 #include "../Funcoes/Mensagens.h"
-#include "../Funcoes/verficar.h"
+#include "..\Funcoes\verficar.h"
+#include "../logs/OrdernarORank.h"
 
 
 #include "../logs/rank.h"
@@ -25,7 +26,7 @@ int jogosolo(){
         {' ', ' ',  ' '},
         {' ', ' ', ' '},
         {' ', ' ', ' '},};
-
+    odernar();
         while(1){
 
             continuar = 's';

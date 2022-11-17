@@ -11,6 +11,7 @@
 int main(){
     bool para = true;
     while(para){
+        odernar();
         int ops;
          printf("/******************************************************|\n");
          printf("/                                                      |\n");
@@ -27,12 +28,10 @@ int main(){
 
          switch(ops){
             case 0 :
-                PrintRank();
                 system("cls");
                 jogosolo();
                 break;
             case 1 :
-                PrintRank();
                 system("cls");
                 jogomult();
                 break;

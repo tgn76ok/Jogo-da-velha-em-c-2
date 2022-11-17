@@ -1,8 +1,10 @@
-#include "..\Funcoes\Mensagens.h"
+
+#include "../Funcoes/Mensagens.h"
 #include "..\Funcoes\verficar.h"
+#include "../logs/OrdernarORank.h"
 
-#include "..\logs\rank.h"
 
+#include "../logs/rank.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -10,6 +12,7 @@
 
 
 int jogomult(){
+
     char continuar;
     char nome1[20],nome2[20];
     char nomeDoVencedor[25]="";
@@ -28,6 +31,7 @@ int jogomult(){
         {' ', ' ', ' '},
         {' ', ' ', ' '},};
 		continuar = 's';
+        odernar();
 
 		// inicio do menu para o jogo multiplayer
 		 printf("/******************************************************|\n");
