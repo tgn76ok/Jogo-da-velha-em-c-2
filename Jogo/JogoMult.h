@@ -19,6 +19,8 @@ char verificar(char tabela[3][3]){
                 return tabela[0][coluna];
             }
         }
+        //verificar as colunas
+
         if ((tabela[0][0] == tabela[1][1])&&(tabela[0][0] == tabela[2][2])){
                 return tabela[0][0];
 
@@ -48,17 +50,19 @@ int jogomult(){
         {' ', ' ', ' '},
         {' ', ' ', ' '},};
 		continuar = 's';
+
+		// inicio do menu para o jogo multiplayer
 		 printf("/******************************************************|\n");
 	     printf("/                                                      |\n");
 	     printf("/                   Jogo da velha                      |\n");
 	     printf("/                                                      |\n");
-	     printf("/       Esse modo o jogador1 ficar como o X            |\n");
-	     printf("/                   por tanto jogador2 fica com o O    |\n");
+	     printf("/       Esse modo o jogador 1 ficar como o X           |\n");
+	     printf("/                   por tanto jogador 2 fica com o O   |\n");
 	     printf("/******************************************************/\n");
                  system("pause");
                  system("cls");
         fflush(stdin);
-
+        //entrada para os usuarios digitarem o nome
         printf("\n|-------------------------------|\n");
         printf("|   DIGITE O NOME DO JOGADOR 1: |\n");;
         printf("|-> ");
@@ -93,7 +97,7 @@ int jogomult(){
 
 		        }else{
 
-                        //empate
+                        //em caso de empate, termina a partida e renicai o jogo
                         for(int linha=0; linha<3;linha++){
                             for(int coluna =0; coluna<3;coluna++){
                                 if (lista[linha][coluna]!=' '){
@@ -111,6 +115,8 @@ int jogomult(){
                         }
                         cont =0;
                     }
+                    //Quando termina a partida pergunta aos jogadores se querem continuar.
+                    //Nisso tive que criar a variavel next que vai aumentando comforme a quantidade de vitorias
 		        if (contX > next || contO >next || empate == 1){
 
 		            printf("\nQuer continuar?[s/n] ");
@@ -127,7 +133,7 @@ int jogomult(){
                     }
 
                     int recorde= PegarRecorde();
-
+                    //aqui chamo a funçao pegarecorde para poder fazer um limiar, para evitar redundancia na hora de salvar no rank
                     if(continuar == 'n'){
                         if(contX > contO && contX>recorde){
                                 strcat(nomeDoVencedor,nome1);
@@ -147,7 +153,7 @@ int jogomult(){
 		        }
 
                 TelaDoJogoMult(lista,contX,contO,nome1,nome2);
-
+                //entrada do usario
 				if ((turno % 2) == 0){
 					printf("\tO Jogador 1 sua vez \n\n\n");
 
