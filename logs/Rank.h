@@ -24,7 +24,7 @@ int escreverNoArquivo(char nome[30],int NumDeVitorias){
 
 }
 int PegarRecorde(){
-   //cria pego os nome e as vezes que esse nome foram usados
+   // pega os nome e as vezes de vitorias que esse nome foram salvos no arquivo rank.txt
     FILE *arq_cliente;
     char var_arquivo_aux;
     char nom[20];
