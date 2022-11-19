@@ -2,7 +2,7 @@
 int creditos(){
      printf("/*******************************************************************************************|\n");
      printf("/                 ALUNO: Thiago Germano                                                     |\n");
-     printf("/                   git: https://github.com/tgn76ok                           		 |\n");
+     printf("/                   git: https://github.com/tgn76ok                                		 |\n");
      printf("/              linkedin: https://www.linkedin.com/in/thiago-germano-do-nascimento-a66624233/|\n");
      printf("/             instragam: @thiago.tgn                                                        |\n");
      printf("/*******************************************************************************************|\n");

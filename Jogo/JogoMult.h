@@ -69,12 +69,12 @@ int jogomult(){
                     }
                 opcao2='o';
                 /*quem ganha e quantas vezes ganharam*/
-		             if (verificartabela(lista)=='x'){
-                            MensagemWins('x');
-                            contX++;
-                    }else if(verificartabela(lista)=='o'){
-                            MensagemWins('o');
-                            contO++;
+		        if (verificartabela(lista)=='x'){
+                        MensagemWins('x');
+                        contX++;
+                }else if(verificartabela(lista)=='o'){
+                        MensagemWins('o');
+                        contO++;
 
 
 		        }else{
@@ -153,7 +153,6 @@ int jogomult(){
 							turno++;
 						}else {
                                 MensagemErrosCasaOcupada();
-
 						}
 					}else{
                            MensagemErrosValorMAiorQue3EMenoQue1();
@@ -188,7 +187,5 @@ int jogomult(){
 
 
 		}
-
-
 	}
 
