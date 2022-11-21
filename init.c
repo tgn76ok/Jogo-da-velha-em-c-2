@@ -39,7 +39,6 @@ int main(){
                 system("cls");
                 creditos();
                 system("pause");
-
                 break;
             case 3 :
                 system("cls");
@@ -53,9 +52,6 @@ int main(){
                 system("cls");
                 printf ("Valor invalido!\n");
                 system("pause");
-
-
-
        }
        system("cls");
     }

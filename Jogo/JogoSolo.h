@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <ctype.h>
 int jogosolo(){
 	char continuar;
 	char opcao, opcaopc;
@@ -40,6 +40,7 @@ int jogosolo(){
                 printf("\t| Voce que ser X ou O? |");
                 printf("\n\n\t |-> ");
                 scanf("%s",&opcao);
+                tolower(opcao);
 
                 if(opcao != 'x' && opcao !='o'){
                     printf("valor voce digitou eh invalido\n");
@@ -64,6 +65,7 @@ int jogosolo(){
                             contO++;
                     }else{
                         //empate
+                        cont =0;
                         for(int linha=0; linha<3;linha++){
                             for(int coluna =0; coluna<3;coluna++){
                                 if (lista[linha][coluna]!=' '){
@@ -79,10 +81,10 @@ int jogosolo(){
                                 }
                             }
                         }
-                        cont =0;
+
                     }
 
-
+                    //verificar esse possivel error o  next no caso do perdedor
                     if (contX > next || contO >next || empate == 1){
                         printf("\nQuer continuar?[s/n] ");
                         scanf("%s",&continuar);
@@ -92,9 +94,11 @@ int jogosolo(){
                                 lista[l][c] = ' ';
                             }
                         }
-
-                        next++;
+                        if (empate !=1){
+                            next++;
+                        }
                         empate =0;
+                        tolower(continuar);
                         if(continuar == 'n'){
                             if(opcao == 'x'){
                                 vezesWins = contX;
@@ -107,8 +111,6 @@ int jogosolo(){
                                 RecordeWins();
 
                             }
-
-
                             break;
 
                         }
@@ -166,8 +168,6 @@ int jogosolo(){
                         }
                     }
                 }
-
-
             if(continuar == 'n'){
                 break;
             }

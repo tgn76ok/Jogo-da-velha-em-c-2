@@ -1,4 +1,5 @@
 
+
 #include "../Funcoes/Mensagens.h"
 #include "..\Funcoes\verficar.h"
 #include "../logs/OrdernarORank.h"
@@ -8,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <ctype.h>
 
 
 int jogomult(){
@@ -103,10 +104,10 @@ int jogomult(){
 
 		            printf("\nQuer continuar?[s/n] ");
 		            scanf("%s",&continuar);
-
+                    if (empate !=1){
+                            next++;
+                        }
                     empate = 0;
-
-
 
                     for(int l=0; l<=3;l++){
                         for(int c=0; c<=3;c++){
@@ -115,6 +116,7 @@ int jogomult(){
                     }
 
                     int recorde= PegarRecorde();
+                    tolower(continuar);
                     //aqui chamo a funçao pegarecorde para poder fazer um limiar, para evitar redundancia na hora de salvar no rank
                     if(continuar == 'n'){
                         if(contX > contO && contX>recorde){
@@ -131,7 +133,7 @@ int jogomult(){
                        }
 		                break;
 		            }
-		            next++;
+
 		        }
 
                 TelaDoJogoMult(lista,contX,contO,nome1,nome2);
