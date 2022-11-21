@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+#include <stdio.h> //input output
+#include <stdbool.h>//boleano
+#include <stdlib.h>//sistema
+#include <ctype.h>// isnumber
 
 #include "Jogo/JogoSolo.h"
 #include "jogo/JogoMult.h"
@@ -12,7 +13,7 @@ int main(){
     bool para = true;
     while(para){
         odernar();
-        int ops;
+        char ops;
          printf("/******************************************************|\n");
          printf("/                                                      |\n");
          printf("/                   Jogo da velha                      |\n");
@@ -24,34 +25,36 @@ int main(){
          printf("/(3) - Rank             |\n");
          printf("/(4) - Exit             |\n");
          printf("|-> ");
-         scanf("%d",&ops);
+         scanf("%c",&ops);
+         fflush(stdin);
 
          switch(ops){
-            case 0 :
+            case '0' :
                 system("cls");
                 jogosolo();
                 break;
-            case 1 :
+            case '1' :
                 system("cls");
                 jogomult();
                 break;
-            case 2 :
+            case '2' :
                 system("cls");
                 creditos();
                 system("pause");
                 break;
-            case 3 :
+            case '3' :
                 system("cls");
                 PrintRank();
                 system("pause");
                 break;
-            case 4 :
+            case '4' :
                 para = false;
                 break;
             default :
                 system("cls");
                 printf ("Valor invalido!\n");
                 system("pause");
+
        }
        system("cls");
     }

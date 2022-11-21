@@ -6,14 +6,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct pessoa {
+struct Jogador {
     char nome[20];
     int NumDeVitorias;
 };
 
-int compararIdade (const void *x, const void *y) {
-    int pri = ((struct pessoa *)x)->NumDeVitorias;
-    int seg = ((struct pessoa *)y)->NumDeVitorias;
+int compararNumDeVitorias (const void *x, const void *y) {
+    int pri = ((struct Jogador *)x)->NumDeVitorias;
+    int seg = ((struct Jogador *)y)->NumDeVitorias;
     return (seg - pri);
 }
 
@@ -23,7 +23,7 @@ int compararIdade (const void *x, const void *y) {
 int PrintRank(){
     int NumDeVitorias[]={0,0,0,0,0,0,0,0,0,0};
     char nomes[][20] =  {"empty","empty","empty","empty","empty","empty","empty","empty","empty","empty"};
-    struct pessoa item[10];
+    struct Jogador item[10];
 
     FILE *arq_cliente;
     char var_arquivo_aux;
@@ -55,7 +55,7 @@ int PrintRank(){
      item[i].NumDeVitorias = NumDeVitorias[i];
    }
 
-   qsort(item, 10, sizeof(struct pessoa), compararIdade);
+   qsort(item, 10, sizeof(struct Jogador), compararNumDeVitorias);
 
    printf("    NOME    | WINS\n");
    for (int i = 0; i < 10; i++) {
@@ -68,7 +68,7 @@ int PrintRank(){
 void odernar(){
     int NumDeVitorias[]={0,0,0,0,0,0,0,0,0,0};
     char nomes[][20] =  {"empty","empty","empty","empty","empty","empty","empty","empty","empty","empty"};
-    struct pessoa item[10];
+    struct Jogador item[10];
 
     FILE *arq_cliente;
     char var_arquivo_aux;
@@ -91,7 +91,7 @@ void odernar(){
                 var_arquivo_aux = fscanf(arq_cliente, "%s %c %d",&nom,&l, &vezesDeVitoria);
 
         }
-        fclose (arq_cliente);
+        fclose(arq_cliente);
 
     }
 
@@ -100,7 +100,7 @@ void odernar(){
      item[i].NumDeVitorias = NumDeVitorias[i];
    }
 
-   qsort(item, 10, sizeof(struct pessoa), compararIdade);
+   qsort(item, 10, sizeof(struct Jogador), compararNumDeVitorias);
 
 
 

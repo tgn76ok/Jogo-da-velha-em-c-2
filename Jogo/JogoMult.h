@@ -17,7 +17,6 @@ int jogomult(){
     char continuar;
     char nome1[20],nome2[20];
     char nomeDoVencedor[25]="";
-
 	int opcao1='x',opcao2='o';
 	int contX =0,contO =0;
 	int linha1,coluna1;
@@ -27,6 +26,7 @@ int jogomult(){
 	int cont=0,numDeVitorias=0;
 	int empate=0;
 
+
 	char lista[3][3] = {
         {' ', ' ', ' '},
         {' ', ' ', ' '},
@@ -35,15 +35,15 @@ int jogomult(){
         odernar();
 
 		// inicio do menu para o jogo multiplayer
-		 printf("/******************************************************|\n");
-	     printf("/                                                      |\n");
-	     printf("/                   Jogo da velha                      |\n");
-	     printf("/                                                      |\n");
-	     printf("/       Esse modo o jogador 1 ficar como o X           |\n");
-	     printf("/                   por tanto jogador 2 fica com o O   |\n");
-	     printf("/******************************************************/\n");
-                 system("pause");
-                 system("cls");
+        printf("/******************************************************|\n");
+        printf("/                                                      |\n");
+        printf("/                   Jogo da velha                      |\n");
+        printf("/                                                      |\n");
+        printf("/       Esse modo o jogador 1 ficar como o X           |\n");
+        printf("/                   por tanto jogador 2 fica com o O   |\n");
+        printf("/******************************************************/\n");
+        system("pause");
+        system("cls");
         fflush(stdin);
         //entrada para os usuarios digitarem o nome
         printf("\n|-------------------------------|\n");
@@ -61,10 +61,10 @@ int jogomult(){
 		while(1){
                     /*correçao do um bug--
                     quando um jogo acaba, o jogador 2 inica com a variavel opcao vazia-- */
-                    for(int g=0; g<=3;g++){
-                        for(int d=0; d<=3;d++){
-                                if (lista[g][d] == 0){
-                                    lista[g][d] = 'o';
+                    for(int lin=0; lin<=3;lin++){
+                        for(int col=0; col<=3;col++){
+                                if (lista[lin][col] == 0){
+                                    lista[lin][col] = 'o';
                                 }
                         }
                     }
@@ -104,6 +104,7 @@ int jogomult(){
 
 		            printf("\nQuer continuar?[s/n] ");
 		            scanf("%s",&continuar);
+
                     if (empate !=1){
                             next++;
                         }
@@ -130,8 +131,8 @@ int jogomult(){
                                 numDeVitorias = contO;
                                 escreverNoArquivo(nomeDoVencedor,numDeVitorias);
                                 RecordeWins();
-                       }
-		                break;
+                        }
+                        break;
 		            }
 
 		        }
@@ -139,6 +140,7 @@ int jogomult(){
                 TelaDoJogoMult(lista,contX,contO,nome1,nome2);
                 //entrada do usario
 				if ((turno % 2) == 0){
+
 					printf("\tO Jogador 1 sua vez \n\n\n");
 
 					printf("\tQual a linha que voce quer[1-3]? ");
@@ -154,14 +156,13 @@ int jogomult(){
 							lista[linha1-1][coluna1-1] = opcao1;
 							turno++;
 						}else {
-                                MensagemErrosCasaOcupada();
+                            MensagemErrosCasaOcupada();
 						}
 					}else{
                            MensagemErrosValorMAiorQue3EMenoQue1();
 						}
-			 }else{
-
-			 	printf("\tO Jogador 2 sua vez \n\n\n");
+                }else{
+                    printf("\tO Jogador 2 sua vez \n\n\n");
 
 					printf("\tQual a linha que voce quer[1-3]? ");
                     printf("\n\t |->");
@@ -172,19 +173,18 @@ int jogomult(){
 					scanf("%d",&coluna2);
 
 
-				if(((1<=linha2)&&(linha2<=3)) &&((1<=coluna2)&&(coluna2<=3))){
+                    if(((1<=linha2)&&(linha2<=3)) &&((1<=coluna2)&&(coluna2<=3))){
 
-					if (lista[linha2-1][coluna2-1] == ' '){
-						lista[linha2-1][coluna2-1] = opcao2;
-						turno++;
+                        if (lista[linha2-1][coluna2-1] == ' '){
+                            lista[linha2-1][coluna2-1] = opcao2;
+                            turno++;
 
-					}else{
-                        MensagemErrosCasaOcupada();
+                        }else{
+                            MensagemErrosCasaOcupada();
                         }
-			 	}else{
-                    MensagemErrosValorMAiorQue3EMenoQue1();
-
-				}
+                    }else{
+                        MensagemErrosValorMAiorQue3EMenoQue1();
+                    }
 			 }
 
 

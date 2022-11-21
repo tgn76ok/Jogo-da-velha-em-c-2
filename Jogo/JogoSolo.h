@@ -2,8 +2,6 @@
 #include "../Funcoes/Mensagens.h"
 #include "..\Funcoes\verficar.h"
 #include "../logs/OrdernarORank.h"
-
-
 #include "../logs/rank.h"
 
 #include <stdio.h>
@@ -20,8 +18,8 @@ int jogosolo(){
 	int linhapc,colunapc;
 	int vezesWins=0;
     int cont=0;
-
 	int turno;
+
 	char lista[3][3] = {
         {' ', ' ',  ' '},
         {' ', ' ', ' '},
@@ -32,14 +30,17 @@ int jogosolo(){
             continuar = 's';
 
             while(1){
+
                 printf("\t|----------------------|\n");
                 printf("\t|   QUAL SEU NOME:     |\n");
                 printf("\n\t |-> ");
                 scanf("%s",&nomePlayer);
+
                 printf("\t|----------------------|\n");
                 printf("\t| Voce que ser X ou O? |");
                 printf("\n\n\t |-> ");
                 scanf("%s",&opcao);
+
                 tolower(opcao);
 
                 if(opcao != 'x' && opcao !='o'){
@@ -116,9 +117,7 @@ int jogosolo(){
                         }
                     }
 
-
                     TelaDoJogoSolo(lista,contX,contO,nomePlayer);
-
 
                     if (turno%2 ==0){
 
@@ -138,30 +137,21 @@ int jogosolo(){
                                 turno+=1;
                             }else{
                                 MensagemErrosCasaOcupada();
-
                             }
-
                         }else{
                             MensagemErrosValorMAiorQue3EMenoQue1();
                         }
-
-
-
                     }else{
-
                         linhapc =rand() %2;
                         colunapc =rand() %2;
-
                         while(1){
                             if((1<=linha1<=3) && (1<=coluna1<=3)){
-
                                 if(lista[linhapc][colunapc]== ' '){
                                     lista[linhapc][colunapc] = opcaopc;
                                     turno+=1;
                                     break;
-
                                 }else{
-                                    linhapc =rand() %3;
+                                    linhapc = rand() %3;
                                     colunapc =rand() %3;
                                 }
                             }
@@ -171,7 +161,6 @@ int jogosolo(){
             if(continuar == 'n'){
                 break;
             }
-
     }
 }
 
