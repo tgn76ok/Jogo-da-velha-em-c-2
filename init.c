@@ -1,7 +1,7 @@
 #include <stdio.h> //input output
 #include <stdbool.h>//boleano
 #include <stdlib.h>//sistema
-#include <ctype.h>// isnumber
+
 
 #include "Jogo/JogoSolo.h"
 #include "jogo/JogoMult.h"

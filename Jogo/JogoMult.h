@@ -145,11 +145,29 @@ int jogomult(){
 
 					printf("\tQual a linha que voce quer[1-3]? ");
                     printf("\n\t |->");
-					scanf("%d",&linha1);
+					while(scanf("%d",&linha1)!=1){
+                            system("cls");
+                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
+                            printf("\tQual a linha que voce quer[1-3]?\n ");
+                            printf("\t |->");
+                            scanf("%d",&linha1);
+                            fflush(stdin);
+                        }
+
+
 
 					printf("\tQual coluna voce quer[1-3]? ");
                     printf("\n\t |->");
-					scanf("%d",&coluna1);
+                    while(scanf("%d",&coluna1)!=1){
+                            system("cls");
+                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
+                            printf("\tDigite novamente a coluna que voce quer[1-3]?\n ");
+                            printf("\t |->");
+                            scanf("%d",&coluna1);
+                            fflush(stdin);
+                        }
 
 					if ((1<=linha1<=3) &&(1<=coluna1<=3)){
 						if (lista[linha1-1][coluna1-1] == ' ' ){
@@ -166,12 +184,29 @@ int jogomult(){
 
 					printf("\tQual a linha que voce quer[1-3]? ");
                     printf("\n\t |->");
-					scanf("%d",&linha2);
+                    while(scanf("%d",&linha2)!=1){
+                            system("cls");
+                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
+                            printf("\tDigite novamente a linha que voce quer[1-3]?\n ");
+                            printf("\t |->");
+                            scanf("%d",&linha2);
+                            fflush(stdin);
+                        }
+
+
 
 					printf("\tQual coluna voce quer[1-3]? ");
                     printf("\n\t|->");
-					scanf("%d",&coluna2);
-
+                    while(scanf("%d",&coluna2)!=1){
+                            system("cls");
+                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
+                            printf("\tDigite novamente a coluna que voce quer[1-3]?\n ");
+                            printf("\t |->");
+                            scanf("%d",&coluna2);
+                            fflush(stdin);
+                        }
 
                     if(((1<=linha2)&&(linha2<=3)) &&((1<=coluna2)&&(coluna2<=3))){
 
