@@ -8,13 +8,13 @@
 int MensagemWins(char jog){
          system("cls");
     if(jog == 'x'){
-        printf("\n\n\t/****************|\n");
-        printf("\t/   O X venceu   |\n");
-        printf("\t/****************|\n");
+        printf("\n\n\t|----------------|\n");
+       printf("\t|   O X venceu   |\n");
+       printf("\t|----------------|\n\n");
     }else if(jog == 'o'){
-        printf("\n\n\t/*************************|\n");
-        printf("\t/ A letra O foi o vencedor|\n");
-        printf("\t/*************************|\n");
+         printf("\n\n\t|-------------------------|\n");
+        printf("\t| A letra O foi o vencedor|\n");
+        printf("\t|-------------------------|\n\n");
     }
 
 }
@@ -23,22 +23,22 @@ int MensagemErrosCasaOcupada(void){
      system("cls");
 
 
-     printf("/******************************************************|\n");
-     printf("/                                                      |\n");
-     printf("/             Essa casa ja foi ocupada                 |\n");
-     printf("/                                                      |\n");
-     printf("/******************************************************/\n");
+     printf("|------------------------------------------------------|\n");
+     printf("|                                                      |\n");
+     printf("|             Essa casa ja foi ocupada                 |\n");
+     printf("|                                                      |\n");
+     printf("|------------------------------------------------------|\n");
                          system("pause");
 
 }
 int MensagemErrosValorMAiorQue3EMenoQue1(void){
     system("cls");
-    printf("/******************************************************|\n");
-    printf("/                                                      |\n");
-    printf("/             O valor digitado e invalido              |\n");
-    printf("/     Digite valores menores que 3 e maiores que 1     |\n");
-    printf("/                                                      |\n");
-    printf("/******************************************************/\n");
+    printf("|------------------------------------------------------|\n");
+    printf("|                                                      |\n");
+    printf("|             O valor digitado e invalido              |\n");
+    printf("|     Digite valores menores que 3 e maiores que 1     |\n");
+    printf("|                                                      |\n");
+    printf("|------------------------------------------------------|\n");
                          system("pause");
 
 
