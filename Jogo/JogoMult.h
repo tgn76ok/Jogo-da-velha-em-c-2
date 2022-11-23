@@ -147,7 +147,7 @@ int jogomult(){
                     printf("\n\t |->");
 					while(scanf("%d",&linha1)!=1){
                             system("cls");
-                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            TelaDoJogoMult(lista,contX,contO,nome1,nome2);
                             printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
                             printf("\tQual a linha que voce quer[1-3]?\n ");
                             printf("\t |->");
@@ -161,7 +161,7 @@ int jogomult(){
                     printf("\n\t |->");
                     while(scanf("%d",&coluna1)!=1){
                             system("cls");
-                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            TelaDoJogoMult(lista,contX,contO,nome1,nome2);
                             printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
                             printf("\tDigite novamente a coluna que voce quer[1-3]?\n ");
                             printf("\t |->");
@@ -186,7 +186,7 @@ int jogomult(){
                     printf("\n\t |->");
                     while(scanf("%d",&linha2)!=1){
                             system("cls");
-                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            TelaDoJogoMult(lista,contX,contO,nome1,nome2);
                             printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
                             printf("\tDigite novamente a linha que voce quer[1-3]?\n ");
                             printf("\t |->");
@@ -200,7 +200,7 @@ int jogomult(){
                     printf("\n\t|->");
                     while(scanf("%d",&coluna2)!=1){
                             system("cls");
-                            TelaDoJogoSolo(lista,contX,contO,nomePlayer);
+                            TelaDoJogoMult(lista,contX,contO,nome1,nome2);
                             printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
                             printf("\tDigite novamente a coluna que voce quer[1-3]?\n ");
                             printf("\t |->");
