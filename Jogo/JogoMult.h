@@ -59,7 +59,7 @@ int jogomult(){
         fflush(stdin);
 
 		while(1){
-                    /*correçao do um bug--
+                    /*correÃ§ao do um bug--
                     quando um jogo acaba, o jogador 2 inica com a variavel opcao vazia-- */
                     for(int lin=0; lin<=3;lin++){
                         for(int col=0; col<=3;col++){
@@ -68,7 +68,7 @@ int jogomult(){
                                 }
                         }
                     }
-                opcao2='o';
+                    opcao2='o';
                 /*quem ganha e quantas vezes ganharam*/
 		        if (verificartabela(lista)=='x'){
                         MensagemWins('x');
@@ -100,14 +100,14 @@ int jogomult(){
                     }
                     //Quando termina a partida pergunta aos jogadores se querem continuar.
                     //Nisso tive que criar a variavel next que vai aumentando comforme a quantidade de vitorias
-		        if (contX > next || contO >next || empate == 1){
+		        if (contX + contO >next || empate == 1){
 
 		            printf("\nQuer continuar?[s/n] ");
 		            scanf("%s",&continuar);
 
                     if (empate !=1){
                             next++;
-                        }
+                    }
                     empate = 0;
 
                     for(int l=0; l<=3;l++){
@@ -118,7 +118,7 @@ int jogomult(){
 
                     int recorde= PegarRecorde();
                     tolower(continuar);
-                    //aqui chamo a funçao pegarecorde para poder fazer um limiar, para evitar redundancia na hora de salvar no rank
+                    //aqui chamo a funÃ§ao pegarecorde para poder fazer um limiar, para evitar redundancia na hora de salvar no rank
                     if(continuar == 'n'){
                         if(contX > contO && contX>recorde){
                                 strcat(nomeDoVencedor,nome1);
@@ -139,50 +139,49 @@ int jogomult(){
 
                 TelaDoJogoMult(lista,contX,contO,nome1,nome2);
                 //entrada do usario
-				if ((turno % 2) == 0){
+		if ((turno % 2) == 0){
 
-					printf("\tO Jogador 1 sua vez \n\n\n");
-
-					printf("\tQual a linha que voce quer[1-3]? ");
-                    printf("\n\t |->");
-					while(scanf("%d",&linha1)!=1){
-                            system("cls");
-                            TelaDoJogoMult(lista,contX,contO,nome1,nome2);
-                            printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
-                            printf("\tQual a linha que voce quer[1-3]?\n ");
-                            printf("\t |->");
-                            scanf("%d",&linha1);
-                            fflush(stdin);
-                        }
-
+			   printf("\tO Jogador 1 sua vez \n\n\n");
+			   printf("\tQual a linha que voce quer[1-3]? ");
+                           printf("\n\t |->");
+			   while(scanf("%d",&linha1)!=1){
+				    system("cls");
+				    TelaDoJogoMult(lista,contX,contO,nome1,nome2);
+				    printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
+				    printf("\tQual a linha que voce quer[1-3]?\n ");
+				    printf("\t |->");
+				    scanf("%d",&linha1);
+				    fflush(stdin);
+				}
 
 
-					printf("\tQual coluna voce quer[1-3]? ");
-                    printf("\n\t |->");
-                    while(scanf("%d",&coluna1)!=1){
-                            system("cls");
-                            TelaDoJogoMult(lista,contX,contO,nome1,nome2);
-                            printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
-                            printf("\tDigite novamente a coluna que voce quer[1-3]?\n ");
-                            printf("\t |->");
-                            scanf("%d",&coluna1);
-                            fflush(stdin);
-                        }
+
+			    printf("\tQual coluna voce quer[1-3]? ");
+			    printf("\n\t |->");
+			    while(scanf("%d",&coluna1)!=1){
+				    system("cls");
+				    TelaDoJogoMult(lista,contX,contO,nome1,nome2);
+				    printf("\tO VALOR QUE VOCE DIGITOU ESTA FORA DA NOSSA ZONA USUAL\n");
+				    printf("\tDigite novamente a coluna que voce quer[1-3]?\n ");
+				    printf("\t |->");
+				    scanf("%d",&coluna1);
+				    fflush(stdin);
+				}
 
 					if ((1<=linha1<=3) &&(1<=coluna1<=3)){
 						if (lista[linha1-1][coluna1-1] == ' ' ){
 							lista[linha1-1][coluna1-1] = opcao1;
 							turno++;
 						}else {
-                            MensagemErrosCasaOcupada();
+                        			MensagemErrosCasaOcupada();
 						}
 					}else{
-                           MensagemErrosValorMAiorQue3EMenoQue1();
-						}
+                       			MensagemErrosValorMAiorQue3EMenoQue1();
+					}
                 }else{
                     printf("\tO Jogador 2 sua vez \n\n\n");
 
-					printf("\tQual a linha que voce quer[1-3]? ");
+		    printf("\tQual a linha que voce quer[1-3]? ");
                     printf("\n\t |->");
                     while(scanf("%d",&linha2)!=1){
                             system("cls");
@@ -196,7 +195,7 @@ int jogomult(){
 
 
 
-					printf("\tQual coluna voce quer[1-3]? ");
+		    printf("\tQual coluna voce quer[1-3]? ");
                     printf("\n\t|->");
                     while(scanf("%d",&coluna2)!=1){
                             system("cls");
