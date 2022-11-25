@@ -85,7 +85,6 @@ int jogosolo(){
 
                     }
 
-                    //verificar esse possivel error o  next no caso do perdedor
                     if (contX + contO >next || empate == 1){
                         printf("\nQuer continuar?[s/n] ");
                         scanf("%s",&continuar);
