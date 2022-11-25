@@ -14,17 +14,17 @@ int jogosolo(){
 	char nomePlayer[30];
 	int contX =0,contO =0;
 	int linha1,coluna1;
-    int next=0, empate=0;
+        int next=0, empate=0;
 	int linhapc,colunapc;
 	int vezesWins=0;
-    int cont=0;
+        int cont=0;
 	int turno;
 
 	char lista[3][3] = {
         {' ', ' ',  ' '},
         {' ', ' ', ' '},
         {' ', ' ', ' '},};
-    odernar();
+        odernar();
         while(1){
 
             continuar = 's';
@@ -86,7 +86,7 @@ int jogosolo(){
                     }
 
                     //verificar esse possivel error o  next no caso do perdedor
-                    if (contX > next || contO >next || empate == 1){
+                    if (contX + contO >next || empate == 1){
                         printf("\nQuer continuar?[s/n] ");
                         scanf("%s",&continuar);
 
